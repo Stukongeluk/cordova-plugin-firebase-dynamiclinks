@@ -14,6 +14,19 @@ Go to firebase console and export `google-services.json` and `GoogleService-Info
 - iOS
 - Android
 
+## iOs Configurations
+
+To use this plugin with iOs, do the following:
+Update CocoaPods:
+```pod repo update```
+
+In xCode go to your project navigator en select your project:
+- Go to `Capabilties` and active `Associated Domains`
+- Add the associated domain with: ```applinks:(foo).app.goo.gl```
+- Go to `Info` and open `Url Types`
+- Add your `REVERSE_CLIENT_ID` (which is located in the GoogleService-info.plsit) to `URL Schemes`
+
+
 ## Preferences
 
 Preferences `GoogleIOSClientId` and `GoogleAndroidClientId` are used to setup dynamic links when you have an app for several platforms. You can find values at your `GoogleService-Info.plist` (key `ANDROID_CLIENT_ID`) and `google-services.json` (key `client[0].oauth_client[0].client_id`).
