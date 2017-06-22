@@ -63,10 +63,10 @@
         <header-file src="src/ios/FirebaseDynamicLinks.h" />
         <source-file src="src/ios/FirebaseDynamicLinks.m" />
 
-	<framework name="Firebase" type="podspec" spec="=4.0.0" />
-	<framework name="FirebaseInvites" type="podspec" spec="=2.0.0" />
-	<framework name="FirebaseDynamicLinks" type="podspec" spec="=2.0.0" />
-	<framework name= "GoogleSignIn" type="podspec" spec="=4.0.0" />
+	<framework src="Firebase" type="podspec" spec="=4.0.0" />
+	<framework src="FirebaseInvites" type="podspec" spec="=2.0.0" />
+	<framework src="FirebaseDynamicLinks" type="podspec" spec="=2.0.0" />
+	<framework src= "GoogleSignIn" type="podspec" spec="=4.0.0" />
 
     </platform>
 
