@@ -18,7 +18,9 @@
         <merges target="cordova.plugins.firebase.dynamiclinks" />
     </js-module>
 
-    <dependency id="cordova-plugin-firebase-hooks"/>
+    <dependency id="cordova-plugin-firebase-hooks"
+		url="https://github.com/Stukongeluk/cordova-plugin-firebase-hooks"
+		commit="master"/>
 
     <platform name="android">
         <preference name="APP_DOMAIN" />
