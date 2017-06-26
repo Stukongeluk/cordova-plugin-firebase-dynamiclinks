@@ -93,6 +93,21 @@
       }
   }];
 
+  if(!handled) {
+    NSURL *url = userActivity.webpageURL.absoluteUrl;
+    NSURLComponents *components = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:NO];
+    NSArray *queryItems = [components queryItems];
+    NSMutableDictionary *dict = [NSMutableDictionary new];
+    for (NSURLQueryItem *item in queryItems) {
+      [dict setObject:[item value] forKey:[item name]];
+    }
+    NSString *deeplink=[dict objectForKey:@"link"];
+    [dl sendDynamicLinkData:@{
+      @"deepLink":deeplink,
+      @"matchType":@"None"
+    }];
+  }
+
   return handled;
 }
 // [END continueuseractivity]
