@@ -94,7 +94,7 @@
   }];
 
   if(!handled) {
-    NSURL *url = userActivity.webpageURL.absoluteUrl;
+    NSURL *url = userActivity.webpageURL.absoluteURL;
     NSURLComponents *components = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:NO];
     NSArray *queryItems = [components queryItems];
     NSMutableDictionary *dict = [NSMutableDictionary new];
