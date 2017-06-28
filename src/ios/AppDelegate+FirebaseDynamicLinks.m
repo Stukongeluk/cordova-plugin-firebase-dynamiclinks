@@ -97,15 +97,16 @@
     NSURL *url = userActivity.webpageURL.absoluteURL;
     NSURLComponents *components = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:NO];
     NSArray *queryItems = [components queryItems];
-    NSMutableDictionary *dict = [NSMutableDictionary new];
     for (NSURLQueryItem *item in queryItems) {
-      [dict setObject:[item value] forKey:[item name]];
+      if([[item name] isEqual:@"link"]) {
+        [dl sendDynamicLinkData:@{
+        @"deepLink":[item value],
+        @"matchType":@"None"
+        }];
+      handled = YES
+      break;
+      }
     }
-    NSString *deeplink=[dict objectForKey:@"link"];
-    [dl sendDynamicLinkData:@{
-      @"deepLink":deeplink,
-      @"matchType":@"None"
-    }];
   }
 
   return handled;
