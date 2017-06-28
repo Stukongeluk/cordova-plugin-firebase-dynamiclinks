@@ -97,16 +97,15 @@
     NSURL *url = userActivity.webpageURL.absoluteURL;
     NSURLComponents *components = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:NO];
     NSArray *queryItems = [components queryItems];
-    for (NSURLQueryItem *item in queryItems) {
+    for (NSURLQueryItem *item in queryItems)
       if([[item name] isEqual:@"link"]) {
         [dl sendDynamicLinkData:@{
-        @"deepLink":[item value],
-        @"matchType":@"None"
+          @"deepLink":[item value],
+          @"matchType":@"None"
         }];
-      handled = YES
-      break;
+        handled = YES
+        break;
       }
-    }
   }
 
   return handled;
